@@ -1,0 +1,27 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Scanner;
+
+public class CurrencyConversionApp {
+   public CurrencyConversionApp() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      CurrencyConverter var2 = new CurrencyConverter();
+      var2.displayCurrencies();
+      System.out.print("Enter base currency (e.g., USD): ");
+      String var3 = var1.next().toUpperCase();
+      System.out.print("Enter target currency (e.g., INR): ");
+      String var4 = var1.next().toUpperCase();
+      System.out.print("Enter amount to convert: ");
+      double var5 = var1.nextDouble();
+      double var7 = var2.convert(var3, var4, var5);
+      if (var7 == -1.0) {
+         System.out.println("Invalid currency selection.");
+      } else {
+         System.out.printf("Converted Amount: %.2f %s\n", var7, var4);
+      }
+
+      var1.close();
+   }
+}
